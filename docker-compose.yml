@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: DockerFileProxy
+    container_name: proxy
+    ports:
+      - "42000:6000"
+
+  math1:
+    build:
+      context: .
+      dockerfile: DockerFileMath
+    container_name: math1
+    ports:
+      - "35001:6000"
+
+  math2:
+    build:
+      context: .
+      dockerfile: DockerFileMath
+    container_name: math2
+    ports:
+      - "35002:6000"
